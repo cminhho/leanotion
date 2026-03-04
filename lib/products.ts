@@ -41,6 +41,29 @@ export type Product = {
 };
 
 const SHOP_URL = "https://leanotion-shop.fourthwall.com";
+const FOURTHWALL_BASE = SHOP_URL;
+
+/** Leanotion slug → Fourthwall product path (for checkout links). Products not in map keep Gumroad. */
+const FOURTHWALL_SLUG_MAP: Record<string, string> = {
+  "real-estate-business": "real-estate-business",
+  "agile-for-life": "agile-for-life-all-in-one-for-life-management",
+  "emergency-action-plan": "notion-template-emergency-action-plan-eap",
+  "year-to-day-planner": "notion-year-to-day-goal-planner",
+  "notion-for-couples": "notion-notion-for-couples",
+  "first-home-tracker": "my-first-home-guided-journey-tracker",
+  "end-of-life-planning": "notion-end-of-life-planning",
+  "digital-wedding-planner": "digital-wedding-planner-template",
+  "digital-product-hub": "new-digital-product",
+  "family-hub": "notion-family-hub-all-in-one",
+};
+
+function getBuyUrl(slug: string, gumroadPath: string): string {
+  const fourthwallPath = FOURTHWALL_SLUG_MAP[slug];
+  if (fourthwallPath) {
+    return `${FOURTHWALL_BASE}/products/${fourthwallPath}`;
+  }
+  return `https://leantechco.gumroad.com/l/${gumroadPath}`;
+}
 
 const IMAGE_BASE =
   "https://image.qwenlm.ai/public_source/3f2012d7-94b2-4d84-a13d-7f2ec5e17675";
@@ -59,7 +82,7 @@ export const products: Product[] = [
     description:
       "Agile for Life - All-in-one for life management. Your all-in-one template for comprehensive life management—goals, tasks, projects, and reflection in one cohesive system.",
     image: DEFAULT_PRODUCT_IMAGE,
-    buyUrl: "https://leantechco.gumroad.com/l/agile-for-life",
+    buyUrl: getBuyUrl("agile-for-life", "agile-for-life"),
     category: "personal",
   },
   {
@@ -69,7 +92,7 @@ export const products: Product[] = [
     description:
       "Structured template for an Emergency Action Plan (EAP), ideal for quickly organizing and responding to emergencies. Includes sections for introduction, features, benefits, and action steps.",
     image: DEFAULT_PRODUCT_IMAGE,
-    buyUrl: "https://leantechco.gumroad.com/l/emergency-action-plan",
+    buyUrl: getBuyUrl("emergency-action-plan", "emergency-action-plan"),
     category: "business",
   },
   {
@@ -79,7 +102,7 @@ export const products: Product[] = [
     description:
       "Simplify your real estate business with client management, property listings, and deal tracking in your workspace.",
     image: DEFAULT_PRODUCT_IMAGE,
-    buyUrl: "https://leantechco.gumroad.com/l/real-estate-business",
+    buyUrl: getBuyUrl("real-estate-business", "real-estate-business"),
     category: "business",
   },
   {
@@ -89,7 +112,7 @@ export const products: Product[] = [
     description:
       "Plan your week ahead with clarity. Manage tasks, prioritize, and stay focused with a simple weekly board.",
     image: DEFAULT_PRODUCT_IMAGE,
-    buyUrl: "https://leantechco.gumroad.com/l/weekly-board-planner",
+    buyUrl: getBuyUrl("weekly-board-planner", "weekly-board-planner"),
     category: "study",
   },
   {
@@ -99,7 +122,7 @@ export const products: Product[] = [
     description:
       "Organize Everything - The 75 Best Lists. Pre-made lists to organize shopping, projects, and more.",
     image: DEFAULT_PRODUCT_IMAGE,
-    buyUrl: "https://leantechco.gumroad.com/l/organize-everything",
+    buyUrl: getBuyUrl("organize-everything", "organize-everything"),
     category: "beginner",
   },
   {
@@ -110,7 +133,7 @@ export const products: Product[] = [
       "The Ultimate Template Bundle is your all-in-one solution for organizing your life, boosting productivity, and staying on top of your goals. Includes a curated set of templates for every aspect of life.",
     image: DEFAULT_PRODUCT_IMAGE,
     badge: "Best Seller",
-    buyUrl: "https://leantechco.gumroad.com/l/notion-bundle-productivity-organization",
+    buyUrl: getBuyUrl("notion-bundle-productivity-organization", "notion-bundle-productivity-organization"),
     category: "beginner",
   },
   {
@@ -120,7 +143,7 @@ export const products: Product[] = [
     description:
       "Comprehensive Excel spreadsheet that helps you manage every aspect of your life—health, relationships, career, finances, and more. Plan each year in detail and track progress.",
     image: DEFAULT_PRODUCT_IMAGE,
-    buyUrl: "https://leantechco.gumroad.com/l/personal-life-management",
+    buyUrl: getBuyUrl("personal-life-management", "personal-life-management"),
     category: "personal",
   },
   {
@@ -130,7 +153,7 @@ export const products: Product[] = [
     description:
       "All-in-one Personal Finance Excel spreadsheet. Track income, expenses, budget, and financial goals in one place.",
     image: DEFAULT_PRODUCT_IMAGE,
-    buyUrl: "https://leantechco.gumroad.com/l/personal-finance-excel",
+    buyUrl: getBuyUrl("personal-finance-excel", "personal-finance-excel"),
     category: "finance",
   },
   {
@@ -140,7 +163,7 @@ export const products: Product[] = [
     description:
       "End-of-life planning formalizes your wishes for the end of your life and documents everything your loved ones need to know.",
     image: DEFAULT_PRODUCT_IMAGE,
-    buyUrl: "https://leantechco.gumroad.com/l/end-of-life-planning",
+    buyUrl: getBuyUrl("end-of-life-planning", "end-of-life-planning"),
     category: "personal",
   },
   {
@@ -150,7 +173,7 @@ export const products: Product[] = [
     description:
       "Customizable workspace for family management. Includes budgeting, meal planning, emergency information, and collaboration for busy families.",
     image: DEFAULT_PRODUCT_IMAGE,
-    buyUrl: "https://leantechco.gumroad.com/l/family-hub",
+    buyUrl: getBuyUrl("family-hub", "family-hub"),
     category: "personal",
   },
   {
@@ -160,7 +183,7 @@ export const products: Product[] = [
     description:
       "A workspace for digital creators to manage ideas, design workflows, sales metrics, and marketing strategies for platforms like Gumroad and Etsy.",
     image: DEFAULT_PRODUCT_IMAGE,
-    buyUrl: "https://leantechco.gumroad.com/l/digital-product-hub",
+    buyUrl: getBuyUrl("digital-product-hub", "digital-product-hub"),
     category: "creators",
   },
   {
@@ -170,7 +193,7 @@ export const products: Product[] = [
     description:
       "Password Manager Hub is a comprehensive template to manage your digital life with enhanced security.",
     image: DEFAULT_PRODUCT_IMAGE,
-    buyUrl: "https://leantechco.gumroad.com/l/password-manager-hub",
+    buyUrl: getBuyUrl("password-manager-hub", "password-manager-hub"),
     category: "personal",
   },
   {
@@ -180,7 +203,7 @@ export const products: Product[] = [
     description:
       "All-in-one productivity tool with customizable sections for goal tracking (yearly, monthly, weekly, daily), gratitude, habit tracking, and reflections.",
     image: DEFAULT_PRODUCT_IMAGE,
-    buyUrl: "https://leantechco.gumroad.com/l/year-to-day-planner",
+    buyUrl: getBuyUrl("year-to-day-planner", "year-to-day-planner"),
     category: "study",
   },
   {
@@ -190,7 +213,7 @@ export const products: Product[] = [
     description:
       "Comprehensive all-in-one solution for couples. Shared goals, calendars, memory logs, finances, chores, and milestone tracking for better connection.",
     image: DEFAULT_PRODUCT_IMAGE,
-    buyUrl: "https://leantechco.gumroad.com/l/notion-for-couples",
+    buyUrl: getBuyUrl("notion-for-couples", "notion-for-couples"),
     category: "personal",
   },
   {
@@ -200,7 +223,7 @@ export const products: Product[] = [
     description:
       "This all-in-one digital tool helps you organize every detail of your special day—from budgets and guest lists to timelines and vendor management.",
     image: DEFAULT_PRODUCT_IMAGE,
-    buyUrl: "https://leantechco.gumroad.com/l/digital-wedding-planner",
+    buyUrl: getBuyUrl("digital-wedding-planner", "digital-wedding-planner"),
     category: "personal",
   },
   {
@@ -210,7 +233,7 @@ export const products: Product[] = [
     description:
       "The Digital Product Launch Kit is your all-in-one solution for building, branding, and selling digital products. Master Dashboard, Product Database, and Branding Toolkit.",
     image: DEFAULT_PRODUCT_IMAGE,
-    buyUrl: "https://leantechco.gumroad.com/l/notion-pro-launch-kit",
+    buyUrl: getBuyUrl("notion-pro-launch-kit", "notion-pro-launch-kit"),
     category: "creators",
   },
   {
@@ -221,7 +244,7 @@ export const products: Product[] = [
       "All-in-one template for first-time home buyers. Manage tasks, budget, listings, and more. Stay organized and confidently buy your dream home.",
     image: DEFAULT_PRODUCT_IMAGE,
     badge: "New",
-    buyUrl: "https://leantechco.gumroad.com/l/first-home-tracker",
+    buyUrl: getBuyUrl("first-home-tracker", "first-home-tracker"),
     category: "personal",
   },
 ];

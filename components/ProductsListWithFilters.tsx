@@ -154,7 +154,7 @@ function FilterPill({
     <button
       type="button"
       onClick={onClick}
-      className="radius-notion-sm px-2.5 py-1 text-xs font-medium transition-colors-theme focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--border-color)] hover:opacity-90"
+      className="radius-notion-sm px-3 py-2 text-sm font-medium transition-colors-theme focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--border-color)] hover:opacity-90"
       style={{
         background: active ? "var(--text-primary)" : "var(--bg-tertiary)",
         color: active ? "var(--bg-primary)" : "var(--text-primary)",
