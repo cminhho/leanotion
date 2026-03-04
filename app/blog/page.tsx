@@ -15,7 +15,7 @@ export default function BlogPage() {
           className="text-lg"
           style={{ color: "var(--text-secondary)" }}
         >
-          Tips, updates, and stories about productivity and Notion. Coming soon.
+          Tips, updates, and stories about productivity. Coming soon.
         </p>
       </div>
     </div>

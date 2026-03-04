@@ -14,7 +14,7 @@ export function Footer() {
           <div className="col-span-1 md:col-span-2">
             <Link href="/" className="flex items-center gap-2 mb-4">
               <div
-                className="w-6 h-6 rounded flex items-center justify-center font-bold text-xs"
+                className="w-6 h-6 radius-notion-sm flex items-center justify-center font-bold text-xs"
                 style={{
                   background: "var(--text-primary)",
                   color: "var(--bg-primary)",
@@ -47,29 +47,29 @@ export function Footer() {
             <ul className="space-y-2 text-sm">
               <li>
                 <Link
-                  href="/#templates"
+                  href="/products"
                   className="transition-colors hover:text-[var(--text-secondary)]"
                   style={{ color: "var(--text-tertiary)" }}
                 >
-                  Notion Templates
+                  Templates
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/products/ultimate-dashboard"
+                  href="/products/agile-for-life"
                   className="transition-colors hover:text-[var(--text-secondary)]"
                   style={{ color: "var(--text-tertiary)" }}
                 >
-                  Second Brain
+                  Agile for Life
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/products/finance-master"
+                  href="/products/notion-bundle-productivity-organization"
                   className="transition-colors hover:text-[var(--text-secondary)]"
                   style={{ color: "var(--text-tertiary)" }}
                 >
-                  Finance Tracker
+                  Productivity Bundle
                 </Link>
               </li>
             </ul>
@@ -83,32 +83,21 @@ export function Footer() {
             </h4>
             <ul className="space-y-2 text-sm">
               <li>
-                <a
-                  href={SHOP_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="transition-colors hover:text-[var(--text-secondary)]"
-                  style={{ color: "var(--text-tertiary)" }}
-                >
-                  Shop
-                </a>
-              </li>
-              <li>
                 <Link
                   href="/about"
                   className="transition-colors hover:text-[var(--text-secondary)]"
                   style={{ color: "var(--text-tertiary)" }}
                 >
-                  Contact
+                  About
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/about"
+                  href="/blog"
                   className="transition-colors hover:text-[var(--text-secondary)]"
                   style={{ color: "var(--text-tertiary)" }}
                 >
-                  Policy
+                  Blog
                 </Link>
               </li>
               <li>
@@ -119,6 +108,17 @@ export function Footer() {
                 >
                   Changelog
                 </Link>
+              </li>
+              <li>
+                <a
+                  href={SHOP_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="transition-colors hover:text-[var(--text-secondary)]"
+                  style={{ color: "var(--text-tertiary)" }}
+                >
+                  Shop
+                </a>
               </li>
             </ul>
           </div>

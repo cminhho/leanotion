@@ -2,8 +2,7 @@ import Image from "next/image";
 import { ShoppingBag } from "lucide-react";
 import Link from "next/link";
 import type { Product } from "@/lib/products";
-
-const SHOP_URL = "https://leanotion-shop.fourthwall.com";
+import { formatPrice, SHOP_URL_CONST } from "@/lib/products";
 
 type ProductCardProps = {
   product: Product;
@@ -15,7 +14,7 @@ export function ProductCard({ product, variant = "primary" }: ProductCardProps) 
 
   return (
     <div
-      className="group rounded-2xl overflow-hidden transition-all duration-300 flex flex-col h-full border border-[var(--border-color)]"
+      className="group radius-notion-lg overflow-hidden transition-all duration-300 flex flex-col h-full border border-[var(--border-color)] shadow-notion-sm"
       style={{ background: "var(--bg-secondary)" }}
     >
       <div
@@ -31,7 +30,7 @@ export function ProductCard({ product, variant = "primary" }: ProductCardProps) 
         />
         {product.badge && (
           <div
-            className={`absolute top-3 right-3 px-2 py-1 rounded text-xs font-medium backdrop-blur border border-white/10 ${
+            className={`absolute top-3 right-3 px-2 py-1 radius-notion-sm text-xs font-medium backdrop-blur border border-white/10 ${
               product.badge === "Best Seller"
                 ? "bg-black/70 text-white"
                 : "bg-accent-500/90 text-white"
@@ -53,7 +52,7 @@ export function ProductCard({ product, variant = "primary" }: ProductCardProps) 
             className="text-lg font-semibold"
             style={{ color: "var(--text-primary)" }}
           >
-            ${product.price}
+            {formatPrice(product.price)}
           </span>
         </div>
         <p
@@ -65,16 +64,16 @@ export function ProductCard({ product, variant = "primary" }: ProductCardProps) 
         <div className="flex gap-2">
           <Link
             href={`/products/${product.slug}`}
-            className="flex-1 py-3 rounded-xl font-semibold transition-colors-theme text-center flex items-center justify-center gap-2 border border-[var(--border-color)] text-[var(--text-primary)] hover:opacity-90"
+            className="flex-1 py-3 radius-notion-md font-semibold transition-colors-theme text-center flex items-center justify-center gap-2 border border-[var(--border-color)] text-[var(--text-primary)] hover:opacity-90"
             style={{ background: "var(--bg-tertiary)" }}
           >
             View
           </Link>
           <a
-            href={SHOP_URL}
+            href={product.buyUrl ?? SHOP_URL_CONST}
             target="_blank"
             rel="noopener noreferrer"
-            className={`flex-1 py-3 rounded-xl font-semibold transition-colors-theme text-center flex items-center justify-center gap-2 ${
+            className={`flex-1 py-3 radius-notion-md font-semibold transition-colors-theme text-center flex items-center justify-center gap-2 ${
               isPrimary
                 ? "bg-[var(--text-primary)] text-[var(--bg-primary)] hover:opacity-90"
                 : "bg-[var(--bg-tertiary)] text-[var(--text-primary)] border border-[var(--border-color)]"

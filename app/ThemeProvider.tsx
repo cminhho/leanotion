@@ -4,7 +4,7 @@ import { createContext, useContext, useEffect, useState } from "react";
 
 type Theme = "light" | "dark";
 
-const defaultTheme: Theme = "dark";
+const defaultTheme: Theme = "light";
 
 const ThemeContext = createContext<{
   theme: Theme;

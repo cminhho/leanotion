@@ -20,7 +20,7 @@ export default function ProductNotFound() {
       </p>
       <Link
         href="/#templates"
-        className="px-6 py-3 rounded-full font-semibold"
+        className="px-6 py-3 radius-notion-md font-semibold"
         style={{
           background: "var(--text-primary)",
           color: "var(--bg-primary)",

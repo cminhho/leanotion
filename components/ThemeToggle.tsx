@@ -10,7 +10,7 @@ export function ThemeToggle() {
     <button
       type="button"
       onClick={toggleTheme}
-      className="theme-toggle-btn w-10 h-10 rounded-full flex items-center justify-center transition-colors-theme bg-[var(--bg-tertiary)] border border-[var(--border-color)]"
+      className="theme-toggle-btn w-10 h-10 radius-notion-md flex items-center justify-center transition-colors-theme bg-[var(--bg-tertiary)] border border-[var(--border-color)]"
       aria-label="Toggle theme"
     >
       <Sun className="theme-icon w-5 h-5 text-[var(--text-primary)] dark:hidden" />

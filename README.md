@@ -1,6 +1,6 @@
 # Leanotion Website
 
-Next.js site for [Leanotion](https://leantechco.com) — productivity templates and Notion tools. App Router, TypeScript, Tailwind CSS.
+Next.js site for [Leanotion](https://leantechco.com) — productivity templates and tools. App Router, TypeScript, Tailwind CSS.
 
 ## Getting Started
 
@@ -53,5 +53,27 @@ npm run deploy:prod
 
 1. Push this repo to GitHub (or connect your Git provider in Vercel).
 2. In [Vercel](https://vercel.com/new), import the repository.
-3. Leave **Root Directory** empty (app is at repo root). Build: `next build`.
+3. **Root Directory:** leave empty if this repo contains only Leanotion (root = app). If the repo is a monorepo and Leanotion lives in a subfolder, set **Root Directory** to that folder (e.g. `leanotion`).
 4. Deploy. Vercel will detect Next.js automatically.
+
+---
+
+## Troubleshooting: 404 NOT_FOUND
+
+If https://leanotion.vercel.app/ shows **404 NOT_FOUND**, check the following in [Vercel Dashboard](https://vercel.com) → your project → **Settings**:
+
+| Check | Correct value | Notes |
+|-------|---------------|-------|
+| **Root Directory** | Empty **or** `leanotion` | Empty if the repo contains only Leanotion. If the repo is a workspace/monorepo (multiple folders including `leanotion`), set **Root Directory** to `leanotion`. |
+| **Framework Preset** | **Next.js** | Do not use "Other" or "None". |
+| **Build Command** | `next build` (default) | Do not change to `npm run build` if package.json already has a build script. |
+| **Output Directory** | Default (empty) | Next.js uses `.next`; do not set manually unless customized. |
+| **Install Command** | `npm install` (default) | Usually no need to change. |
+
+**Quick steps:**
+
+1. Go to **Settings → General → Root Directory**: if your repo is a workspace (multiple projects), click **Edit**, enter `leanotion`, **Save**.
+2. **Settings → General → Framework Preset**: select **Next.js**.
+3. **Deployments**: select the latest deployment → **Redeploy** (or push a new commit to trigger a deploy).
+
+After changing Root Directory or Framework, **Redeploy** (Deployments → ⋮ → Redeploy) to apply.

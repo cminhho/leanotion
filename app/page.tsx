@@ -13,11 +13,11 @@ export default function HomePage() {
       >
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute -top-40 -right-40 w-96 h-96 bg-accent-500/10 rounded-full blur-3xl" />
-          <div className="absolute top-20 -left-20 w-72 h-72 bg-purple-500/10 rounded-full blur-3xl" />
+          <div className="absolute top-20 -left-20 w-72 h-72 bg-accent-500/10 rounded-full blur-3xl" />
         </div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10">
           <div
-            className="inline-flex items-center gap-2 px-3 py-1 rounded-full mb-8 animate-fade-in border border-[var(--border-color)] text-xs font-medium"
+            className="inline-flex items-center gap-2 px-3 py-1 radius-notion-md mb-8 animate-fade-in border border-[var(--border-color)] text-xs font-medium"
             style={{
               background: "var(--bg-tertiary)",
               color: "var(--text-secondary)",
@@ -37,7 +37,7 @@ export default function HomePage() {
             className="mt-4 max-w-2xl mx-auto text-lg animate-slide-up text-[var(--text-secondary)]"
             style={{ animationDelay: "0.2s" }}
           >
-            A collection of minimalist Notion templates (Lean) designed to help
+            A collection of minimalist productivity templates designed to help
             you focus on what matters most without the clutter.
           </p>
           <div
@@ -45,8 +45,8 @@ export default function HomePage() {
             style={{ animationDelay: "0.3s" }}
           >
             <Link
-              href="/#templates"
-              className="px-8 py-3 rounded-full font-semibold hover:opacity-90 transition-all transform hover:scale-105"
+              href="/products"
+              className="px-8 py-3 radius-notion-md font-semibold hover:opacity-90 transition-all transform hover:scale-105"
               style={{
                 background: "var(--text-primary)",
                 color: "var(--bg-primary)",
@@ -58,7 +58,7 @@ export default function HomePage() {
               href={SHOP_URL_CONST}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-8 py-3 rounded-full font-semibold transition-all border border-[var(--border-color)]"
+              className="px-8 py-3 radius-notion-md font-semibold transition-all border border-[var(--border-color)]"
               style={{
                 background: "var(--bg-tertiary)",
                 color: "var(--text-primary)",
@@ -96,7 +96,7 @@ export default function HomePage() {
               {
                 icon: "Zap",
                 title: "Optimized",
-                desc: "Lightweight design, fast loading, without complex formulas that slow down your Notion.",
+                desc: "Lightweight design, fast loading, without complex formulas that slow down your workspace.",
               },
               {
                 icon: "LayoutTemplate",
@@ -113,11 +113,11 @@ export default function HomePage() {
               return (
               <div
                 key={i}
-                className="p-6 rounded-2xl transition-colors-theme border border-[var(--border-color)]"
+                className="p-6 radius-notion-lg shadow-notion-sm transition-colors-theme border border-[var(--border-color)]"
                 style={{ background: "var(--bg-primary)" }}
               >
                 <div
-                  className="w-12 h-12 rounded-lg flex items-center justify-center mb-4"
+                  className="w-12 h-12 radius-notion-md flex items-center justify-center mb-4"
                   style={{
                     background: "var(--bg-tertiary)",
                     color: "var(--text-primary)",
@@ -166,15 +166,13 @@ export default function HomePage() {
                 The best tools to manage your life.
               </p>
             </div>
-            <a
-              href={SHOP_URL_CONST}
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              href="/products"
               className="font-medium flex items-center gap-1 group text-accent-500 hover:text-accent-600"
             >
               View All{" "}
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </a>
+            </Link>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {products.map((product, i) => (
@@ -217,19 +215,16 @@ export default function HomePage() {
             href={SHOP_URL_CONST}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-full font-bold transition-all transform hover:scale-105 shadow-lg bg-accent-600 text-white hover:bg-accent-500"
-            style={{
-              boxShadow: "0 10px 40px rgba(99, 102, 241, 0.25)",
-            }}
+            className="inline-flex items-center gap-2 px-8 py-4 radius-notion-md font-bold transition-all transform hover:scale-105 shadow-notion-md bg-accent-600 text-white hover:bg-accent-500"
           >
-            Visit Fourthwall Shop
+            Visit Shop
             <ExternalLink className="w-5 h-5" />
           </a>
           <p
             className="mt-4 text-xs"
             style={{ color: "var(--text-tertiary)" }}
           >
-            Secure checkout via Fourthwall. Lifetime support included.
+            Secure checkout. Lifetime support included.
           </p>
         </div>
       </section>
