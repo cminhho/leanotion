@@ -1,7 +1,7 @@
 import Link from "next/link";
-import { ArrowRight, ExternalLink, Zap, LayoutTemplate, ShieldCheck } from "lucide-react";
+import { ArrowRight, Zap, LayoutTemplate, ShieldCheck } from "lucide-react";
 import { ProductCard } from "@/components/ProductCard";
-import { products, SHOP_URL_CONST } from "@/lib/products";
+import { products } from "@/lib/products";
 
 export default function HomePage() {
   return (
@@ -41,7 +41,7 @@ export default function HomePage() {
             you focus on what matters most without the clutter.
           </p>
           <div
-            className="mt-10 flex justify-center gap-4 animate-slide-up"
+            className="mt-10 flex justify-center animate-slide-up"
             style={{ animationDelay: "0.3s" }}
           >
             <Link
@@ -54,18 +54,6 @@ export default function HomePage() {
             >
               Explore Templates
             </Link>
-            <a
-              href={SHOP_URL_CONST}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-8 py-3 radius-notion-md font-semibold transition-all border border-[var(--border-color)]"
-              style={{
-                background: "var(--bg-tertiary)",
-                color: "var(--text-primary)",
-              }}
-            >
-              Visit Shop
-            </a>
           </div>
         </div>
       </div>
@@ -211,20 +199,18 @@ export default function HomePage() {
             Join thousands of users who are using Leanotion to work smarter, not
             harder.
           </p>
-          <a
-            href={SHOP_URL_CONST}
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            href="/products"
             className="inline-flex items-center gap-2 px-8 py-4 radius-notion-md font-bold transition-all transform hover:scale-105 shadow-notion-md bg-accent-600 text-white hover:bg-accent-500"
           >
-            Visit Shop
-            <ExternalLink className="w-5 h-5" />
-          </a>
+            View All Templates
+            <ArrowRight className="w-5 h-5" />
+          </Link>
           <p
             className="mt-4 text-xs"
             style={{ color: "var(--text-tertiary)" }}
           >
-            Secure checkout. Lifetime support included.
+            Browse templates. Lifetime support included.
           </p>
         </div>
       </section>

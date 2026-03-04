@@ -1,8 +1,6 @@
 import Link from "next/link";
 import { Twitter, Instagram, Youtube } from "lucide-react";
 
-const SHOP_URL = "https://leanotion-shop.fourthwall.com";
-
 export function Footer() {
   return (
     <footer
@@ -110,15 +108,13 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <a
-                  href={SHOP_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <Link
+                  href="/products"
                   className="transition-colors hover:text-[var(--text-secondary)]"
                   style={{ color: "var(--text-tertiary)" }}
                 >
-                  Shop
-                </a>
+                  All Templates
+                </Link>
               </li>
             </ul>
           </div>

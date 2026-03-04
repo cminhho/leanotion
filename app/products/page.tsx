@@ -1,10 +1,5 @@
 import type { Metadata } from "next";
-import { products } from "@/lib/products";
-import {
-  type ProductCategory,
-  type PriceFilter,
-  CATEGORIES,
-} from "@/lib/products";
+import { products, FILTER_OPTIONS, type FilterOption } from "@/lib/products";
 import { ProductsListWithFilters } from "@/components/ProductsListWithFilters";
 
 export const metadata: Metadata = {
@@ -13,31 +8,21 @@ export const metadata: Metadata = {
     "Browse all Leanotion templates and tools for productivity, finance, and life organization.",
 };
 
-const VALID_CATEGORIES = new Set<string>([
-  "all",
-  ...CATEGORIES,
-]);
-const VALID_PRICE: PriceFilter[] = ["all", "free", "paid"];
+const VALID_FILTERS = new Set<string>(FILTER_OPTIONS);
 
-function parseCategory(category: string | undefined): ProductCategory | "all" {
-  if (!category || !VALID_CATEGORIES.has(category)) return "all";
-  return category as ProductCategory | "all";
-}
-
-function parsePrice(price: string | undefined): PriceFilter {
-  if (!price || !VALID_PRICE.includes(price as PriceFilter)) return "all";
-  return price as PriceFilter;
+function parseFilter(filter: string | undefined): FilterOption {
+  if (!filter || !VALID_FILTERS.has(filter)) return "all";
+  return filter as FilterOption;
 }
 
 export default async function ProductsPage({
   searchParams,
 }: {
-  searchParams: Promise<{ q?: string; category?: string; price?: string }>;
+  searchParams: Promise<{ q?: string; filter?: string }>;
 }) {
   const params = await searchParams;
   const q = typeof params.q === "string" ? params.q : "";
-  const category = parseCategory(params.category);
-  const price = parsePrice(params.price);
+  const filter = parseFilter(params.filter);
 
   return (
     <div
@@ -48,8 +33,7 @@ export default async function ProductsPage({
         <ProductsListWithFilters
           products={products}
           initialQ={q}
-          initialCategory={category}
-          initialPrice={price}
+          initialFilter={filter}
         />
       </div>
     </div>

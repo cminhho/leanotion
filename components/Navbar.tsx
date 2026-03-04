@@ -5,8 +5,6 @@ import { Menu } from "lucide-react";
 import { useState } from "react";
 import { ThemeToggle } from "./ThemeToggle";
 
-const SHOP_URL = "https://leanotion-shop.fourthwall.com";
-
 export function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
@@ -63,18 +61,6 @@ export function Navbar() {
             >
               About
             </Link>
-            <a
-              href={SHOP_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-4 py-2 radius-notion-md text-sm font-semibold transition-colors-theme"
-              style={{
-                background: "var(--text-primary)",
-                color: "var(--bg-primary)",
-              }}
-            >
-              Shop
-            </a>
             <ThemeToggle />
           </div>
           <button
@@ -122,14 +108,6 @@ export function Navbar() {
           >
             About
           </Link>
-          <a
-            href={SHOP_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="block px-3 py-2 radius-notion-sm text-base font-medium text-accent-500"
-          >
-            Shop Now
-          </a>
           <div className="flex items-center gap-2 px-3 py-2">
             <span className="text-base font-medium text-[var(--text-secondary)]">
               Theme
