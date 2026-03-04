@@ -90,16 +90,6 @@ export const products: Product[] = [
     category: "Productivity",
   },
   {
-    slug: "lending-backoffice-portal",
-    title: "SourceCode: Lending BackOffice Portal Website",
-    price: 15,
-    description:
-      "Source code for a Lending BackOffice Portal website. Ready to customize and deploy for your lending operations.",
-    image: DEFAULT_PRODUCT_IMAGE,
-    buyUrl: "https://leantechco.gumroad.com/l/lending-backoffice-portal",
-    category: "Other",
-  },
-  {
     slug: "personal-life-management",
     title: "All-in-One Life Planner Excel Spreadsheet",
     price: 10,
