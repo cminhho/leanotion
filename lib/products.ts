@@ -1,3 +1,10 @@
+export type ProductCategory =
+  | "Productivity"
+  | "Finance"
+  | "Life"
+  | "Business"
+  | "Other";
+
 export type Product = {
   slug: string;
   title: string;
@@ -6,6 +13,7 @@ export type Product = {
   image: string;
   badge?: "Best Seller" | "New";
   buyUrl?: string;
+  category?: ProductCategory;
 };
 
 const SHOP_URL = "https://leanotion-shop.fourthwall.com";
@@ -28,6 +36,7 @@ export const products: Product[] = [
       "Agile for Life - All-in-one for life management. Your all-in-one template for comprehensive life management—goals, tasks, projects, and reflection in one cohesive system.",
     image: DEFAULT_PRODUCT_IMAGE,
     buyUrl: "https://leantechco.gumroad.com/l/agile-for-life",
+    category: "Productivity",
   },
   {
     slug: "emergency-action-plan",
@@ -37,6 +46,7 @@ export const products: Product[] = [
       "Structured template for an Emergency Action Plan (EAP), ideal for quickly organizing and responding to emergencies. Includes sections for introduction, features, benefits, and action steps.",
     image: DEFAULT_PRODUCT_IMAGE,
     buyUrl: "https://leantechco.gumroad.com/l/emergency-action-plan",
+    category: "Business",
   },
   {
     slug: "real-estate-business",
@@ -46,6 +56,7 @@ export const products: Product[] = [
       "Simplify your real estate business with client management, property listings, and deal tracking in your workspace.",
     image: DEFAULT_PRODUCT_IMAGE,
     buyUrl: "https://leantechco.gumroad.com/l/real-estate-business",
+    category: "Business",
   },
   {
     slug: "weekly-board-planner",
@@ -55,6 +66,7 @@ export const products: Product[] = [
       "Plan your week ahead with clarity. Manage tasks, prioritize, and stay focused with a simple weekly board.",
     image: DEFAULT_PRODUCT_IMAGE,
     buyUrl: "https://leantechco.gumroad.com/l/weekly-board-planner",
+    category: "Productivity",
   },
   {
     slug: "organize-everything",
@@ -64,6 +76,7 @@ export const products: Product[] = [
       "Organize Everything - The 75 Best Lists. Pre-made lists to organize shopping, projects, and more.",
     image: DEFAULT_PRODUCT_IMAGE,
     buyUrl: "https://leantechco.gumroad.com/l/organize-everything",
+    category: "Productivity",
   },
   {
     slug: "notion-bundle-productivity-organization",
@@ -74,6 +87,7 @@ export const products: Product[] = [
     image: DEFAULT_PRODUCT_IMAGE,
     badge: "Best Seller",
     buyUrl: "https://leantechco.gumroad.com/l/notion-bundle-productivity-organization",
+    category: "Productivity",
   },
   {
     slug: "lending-backoffice-portal",
@@ -83,6 +97,7 @@ export const products: Product[] = [
       "Source code for a Lending BackOffice Portal website. Ready to customize and deploy for your lending operations.",
     image: DEFAULT_PRODUCT_IMAGE,
     buyUrl: "https://leantechco.gumroad.com/l/lending-backoffice-portal",
+    category: "Other",
   },
   {
     slug: "personal-life-management",
@@ -92,6 +107,7 @@ export const products: Product[] = [
       "Comprehensive Excel spreadsheet that helps you manage every aspect of your life—health, relationships, career, finances, and more. Plan each year in detail and track progress.",
     image: DEFAULT_PRODUCT_IMAGE,
     buyUrl: "https://leantechco.gumroad.com/l/personal-life-management",
+    category: "Life",
   },
   {
     slug: "personal-finance-excel",
@@ -101,6 +117,7 @@ export const products: Product[] = [
       "All-in-one Personal Finance Excel spreadsheet. Track income, expenses, budget, and financial goals in one place.",
     image: DEFAULT_PRODUCT_IMAGE,
     buyUrl: "https://leantechco.gumroad.com/l/personal-finance-excel",
+    category: "Finance",
   },
   {
     slug: "end-of-life-planning",
@@ -110,6 +127,7 @@ export const products: Product[] = [
       "End-of-life planning formalizes your wishes for the end of your life and documents everything your loved ones need to know.",
     image: DEFAULT_PRODUCT_IMAGE,
     buyUrl: "https://leantechco.gumroad.com/l/end-of-life-planning",
+    category: "Life",
   },
   {
     slug: "family-hub",
@@ -119,6 +137,7 @@ export const products: Product[] = [
       "Customizable workspace for family management. Includes budgeting, meal planning, emergency information, and collaboration for busy families.",
     image: DEFAULT_PRODUCT_IMAGE,
     buyUrl: "https://leantechco.gumroad.com/l/family-hub",
+    category: "Life",
   },
   {
     slug: "digital-product-hub",
@@ -128,6 +147,7 @@ export const products: Product[] = [
       "A workspace for digital creators to manage ideas, design workflows, sales metrics, and marketing strategies for platforms like Gumroad and Etsy.",
     image: DEFAULT_PRODUCT_IMAGE,
     buyUrl: "https://leantechco.gumroad.com/l/digital-product-hub",
+    category: "Business",
   },
   {
     slug: "password-manager-hub",
@@ -137,6 +157,7 @@ export const products: Product[] = [
       "Password Manager Hub is a comprehensive template to manage your digital life with enhanced security.",
     image: DEFAULT_PRODUCT_IMAGE,
     buyUrl: "https://leantechco.gumroad.com/l/password-manager-hub",
+    category: "Productivity",
   },
   {
     slug: "year-to-day-planner",
@@ -146,6 +167,7 @@ export const products: Product[] = [
       "All-in-one productivity tool with customizable sections for goal tracking (yearly, monthly, weekly, daily), gratitude, habit tracking, and reflections.",
     image: DEFAULT_PRODUCT_IMAGE,
     buyUrl: "https://leantechco.gumroad.com/l/year-to-day-planner",
+    category: "Productivity",
   },
   {
     slug: "notion-for-couples",
@@ -155,6 +177,7 @@ export const products: Product[] = [
       "Comprehensive all-in-one solution for couples. Shared goals, calendars, memory logs, finances, chores, and milestone tracking for better connection.",
     image: DEFAULT_PRODUCT_IMAGE,
     buyUrl: "https://leantechco.gumroad.com/l/notion-for-couples",
+    category: "Life",
   },
   {
     slug: "digital-wedding-planner",
@@ -164,6 +187,7 @@ export const products: Product[] = [
       "This all-in-one digital tool helps you organize every detail of your special day—from budgets and guest lists to timelines and vendor management.",
     image: DEFAULT_PRODUCT_IMAGE,
     buyUrl: "https://leantechco.gumroad.com/l/digital-wedding-planner",
+    category: "Life",
   },
   {
     slug: "notion-pro-launch-kit",
@@ -173,6 +197,7 @@ export const products: Product[] = [
       "The Digital Product Launch Kit is your all-in-one solution for building, branding, and selling digital products. Master Dashboard, Product Database, and Branding Toolkit.",
     image: DEFAULT_PRODUCT_IMAGE,
     buyUrl: "https://leantechco.gumroad.com/l/notion-pro-launch-kit",
+    category: "Business",
   },
   {
     slug: "first-home-tracker",
@@ -183,10 +208,57 @@ export const products: Product[] = [
     image: DEFAULT_PRODUCT_IMAGE,
     badge: "New",
     buyUrl: "https://leantechco.gumroad.com/l/first-home-tracker",
+    category: "Life",
   },
 ];
 
 export const SHOP_URL_CONST = SHOP_URL;
+
+export const CATEGORIES: readonly ProductCategory[] = [
+  "Productivity",
+  "Finance",
+  "Life",
+  "Business",
+  "Other",
+] as const;
+
+export type PriceFilter = "all" | "free" | "paid";
+
+export type ProductFilters = {
+  q?: string;
+  category?: ProductCategory | "all";
+  price?: PriceFilter;
+};
+
+export function filterProducts(
+  list: Product[],
+  filters: ProductFilters
+): Product[] {
+  let result = list;
+
+  const q = filters.q?.trim().toLowerCase();
+  if (q) {
+    result = result.filter(
+      (p) =>
+        p.title.toLowerCase().includes(q) ||
+        p.description.toLowerCase().includes(q)
+    );
+  }
+
+  if (filters.category && filters.category !== "all") {
+    result = result.filter((p) => p.category === filters.category);
+  }
+
+  if (filters.price && filters.price !== "all") {
+    if (filters.price === "free") {
+      result = result.filter((p) => p.price === 0);
+    } else {
+      result = result.filter((p) => p.price > 0);
+    }
+  }
+
+  return result;
+}
 
 export function getProductBySlug(slug: string): Product | undefined {
   return products.find((p) => p.slug === slug);
